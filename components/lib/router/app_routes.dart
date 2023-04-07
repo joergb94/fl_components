@@ -5,15 +5,20 @@ import 'package:components/screens/screens.dart';
 class AppRoutes{
   static const initialRoute = "Home";
   static final menuOptions = <MenuOption>[
-    MenuOption(route: 'Home',  name: 'Home Screen', screen:  const HomeScreen(),icon:Icons.star),
+    //MenuOption(route: 'Home',  name: 'Home Screen', screen:  const HomeScreen(),icon:Icons.star),
     MenuOption(route: 'List1',  name: 'List View 1', screen: const ListView1Screen() ,icon:Icons.layers),
     MenuOption(route: 'List2',  name: 'List View 2', screen: const ListView2Screen() ,icon:Icons.layers),
     MenuOption(route: 'alert',  name: 'Alert view', screen: const AlertScreen() ,icon:Icons.alarm),
     MenuOption(route: 'card',  name: 'Card view', screen: const CardScreen() ,icon:Icons.card_giftcard),
+    MenuOption(route: 'Avatar',  name: 'Avatar view', screen: const AvatarScreen() ,icon:Icons.people),
+    MenuOption(route: 'Animated',  name: 'Animated view', screen: const AnimatedScreen() ,icon:Icons.play_arrow),
+    MenuOption(route: 'Inputs',  name: 'Inputs view', screen: const InputsScreen() ,icon:Icons.play_arrow),
   ];
   
   static Map<String, Widget Function(BuildContext)> getAppRoutes(){
   Map<String, Widget Function(BuildContext)> appRoutes = {};
+     appRoutes.addAll({'Home': (BuildContext context) => const HomeScreen()});
+
     for (final option in menuOptions) {
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});
     }
