@@ -12,7 +12,9 @@ class AppRoutes{
     MenuOption(route: 'card',  name: 'Card view', screen: const CardScreen() ,icon:Icons.card_giftcard),
     MenuOption(route: 'Avatar',  name: 'Avatar view', screen: const AvatarScreen() ,icon:Icons.people),
     MenuOption(route: 'Animated',  name: 'Animated view', screen: const AnimatedScreen() ,icon:Icons.play_arrow),
-    MenuOption(route: 'Inputs',  name: 'Inputs view', screen: const InputsScreen() ,icon:Icons.play_arrow),
+    MenuOption(route: 'Inputs',  name: 'Inputs view', screen: const InputsScreen() ,icon:Icons.input_outlined),
+    MenuOption(route: 'Slider',  name: 'Slider Screen View', screen: const SliderScreen() ,icon:Icons.slideshow_rounded),
+    MenuOption(route: 'ListBuilder',  name: 'List Builder View', screen: const ListViewBuilderScreen() ,icon:Icons.screenshot),
   ];
   
   static Map<String, Widget Function(BuildContext)> getAppRoutes(){

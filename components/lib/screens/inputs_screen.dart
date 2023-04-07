@@ -13,7 +13,7 @@ class InputsScreen extends StatelessWidget {
       'last_name':'Gamboa',
       'email':'Gamboa@gmail.com',
       'password':'123456',
-      'role':'Admin'
+      'role':'admin'
     };
     return Scaffold(
       appBar: AppBar(
@@ -34,9 +34,23 @@ class InputsScreen extends StatelessWidget {
                const SizedBox(height:30,),
                InputDefault(hintText:'Password',labelText:'Password', obscureText: true, formProperty: 'password', formValues: formValues,),
                const SizedBox(height:30,),
+               DropdownButtonFormField<String>(
+                value:'admin',
+                items: const [
+                  DropdownMenuItem(value:'admin', child: Text('Admin'),),
+                  DropdownMenuItem(value:'jr', child: Text('jr'),),
+                  DropdownMenuItem(value:'sr', child: Text('sr'),),
+                ],
+                onChanged: (value){
+                  formValues['role'] = value ?? 'admin';
+
+                },
+               ),
+               const SizedBox(height:30,),
                ElevatedButton( onPressed:(){
 
-                FocusScope.of(context).requestFocus(FocusNode());
+                FocusManager.instance.primaryFocus?.unfocus();
+                
                  if(!myFormkey.currentState!.validate()){
                     print('no valid form key');
                  }else{
